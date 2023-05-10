@@ -33,7 +33,7 @@ public class Triangle {
     // פונקציה המדפיסה את היקף המשולש
     private static void trianglePerimeterPRINTER(int length,int height) {
         // Calculate the length of the equal sides
-        double side = Math.sqrt(Math.pow(length / 2, 2) + Math.pow(height, 2));
+        double side = Math.sqrt(Math.pow(length/2, 2) + Math.pow(height, 2));
 
         // Calculate the perimeter
         double perimeter = 2 * side + length;
