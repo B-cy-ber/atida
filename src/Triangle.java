@@ -5,7 +5,7 @@ public class Triangle {
         Scanner scanner = new Scanner(System.in);
         int choice;
         System.out.print("Enter '1' to print the perimeter of the triangle, or '2' to print the shape of the triangle: ");
-        //בודק אם הקלט שהוכנס תקין
+        //checks if the entered input is correct
         while (true) {
             try {
                 choice = scanner.nextInt();
@@ -30,7 +30,7 @@ public class Triangle {
         }
     }
 
-    // פונקציה המדפיסה את היקף המשולש
+
     private static void trianglePerimeterPRINTER(int length,int height) {
         // Calculate the length of the equal sides
         double side = Math.sqrt(Math.pow(length/2, 2) + Math.pow(height, 2));
@@ -41,32 +41,32 @@ public class Triangle {
     }
 
 
-    //  מדפיס את הצורה של המשולש מכוכביות.
+    // prints the shape of the triangle from asterisks.
     public static void printTriangle(int length, int height) {
-        if (length % 2 == 0 || length > height * 2) {//   שני התנאים: המשולש חייב להיות באורך אי זוגי והרוחב....
+        if (length % 2 == 0 || length > height * 2) {
             System.out.println("The triangle cannot be printed.");
         } else {
-            int divisor=countOddDivisors(length);//כמה מספרים אי זוגיים נכנסים לאורך לא כולל 1 ועצמו.
-            int NumofRows=(height-2)/divisor;// כמה פעמים מכל סוג שורה
-            int remainder = (height-2) % divisor;// שארית שממנ היודפסו שורות של 3
-            printline(1,length);//הדפסת השורה העליונה במשולש
-            for (int i = 0; i < remainder; i += 1) {//הדפסת שורות של שלוש כוכביות כמספר השארית
+            int divisor=countOddDivisors(length);//how many odd numbers go into length excluding 1 and itself.
+            int NumofRows=(height-2)/divisor;// How many times of each row type
+            int remainder = (height-2) % divisor;
+            printline(1,length);
+            for (int i = 0; i < remainder; i += 1) {//print lines of three asterisks as the number of the remainder
                 printline(3,length);
             }
             int numstars=3;
-            for (int i = 0; i <divisor ; i += 1) {//  הדפסת שאר השורות האמצעיות
+            for (int i = 0; i <divisor ; i += 1) {
                 for (int J = 0; J < NumofRows; J += 1) {
                     printline(numstars, length);
 
                 }
                 numstars+=2;
             }
-            printline(length, length);// הדפסת השורה התחתונה
+            printline(length, length);
             System.out.println();
 
         }
     }
-    // כמה מספרים אי זוגיים נכנסים לאורך לא כולל 1 ועצמו.
+
     public static int countOddDivisors(int num) {
         int count = 0;
         for (int i = 2; i < num; i++) {
@@ -76,7 +76,7 @@ public class Triangle {
         }
         return count;
     }
-    //מדפיסה שורת כוכביות
+    //prints a line of asterisks
     public static void printline (int star, int length) {
         int space=(length-star)/2;
         for (int i = 0; i < space; i += 1) {

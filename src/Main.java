@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import  java.lang.Math;
 
 
 public class Main {
@@ -103,7 +102,7 @@ public class Main {
                         System.out.println("Exit option selected.");
                         break;
                     default:
-                        System.out.println("Invalid input.");   //  אין צורך רק ליתר ביטחון
+                        System.out.println("Invalid input.");
                         break;
             }
                 if (num==3){
